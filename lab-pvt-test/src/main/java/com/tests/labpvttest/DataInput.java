@@ -1,5 +1,7 @@
 package com.tests.labpvttest;
 
+import java.util.ArrayList;
+
 public class DataInput {
 
 	private String[] sequenceOfNumbersSplit;
@@ -20,4 +22,7 @@ public class DataInput {
 
 	}
 
+	public ArrayList<Integer> getIntSequance() {
+		return checkInput.getCheckSequance().getSequence();
+	}
 }
