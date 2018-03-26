@@ -3,7 +3,6 @@ package com.tests.labpvttest;
 public class CheckInput {
 
 	private String[] sequenceOfNumbersSplit;
-	private CheckSequence checkSequance;
 
 	public CheckInput(String[] sequenceOfNumbersSplit) {
 		this.sequenceOfNumbersSplit = sequenceOfNumbersSplit;
@@ -19,11 +18,11 @@ public class CheckInput {
 
 	public boolean check() {
 		if (isLengthCorrect()) {
-			checkSequance = new CheckSequence(sequenceOfNumbersSplit);
-			return checkSequance.check();
+			// to do checking sequence
+			return true;
 		}
+
 		return false;
 
 	}
-
 }
