@@ -12,14 +12,13 @@ public class TournamentOrganizer {
 		dataInput = new DataInput(sequence);
 	}
 
-	public void startTournament() {
+	public int startTournament() {
 		if (dataInput.validateInput()) {
 			sequence = dataInput.getIntSequance();
 			dancer = new Dancer(sequence);
-			System.out.println(dancer.dance());
-
-		} else
-			System.out.println("Incorrect sequence");
+			return dancer.dance();
+		}
+		return 0;
 
 	}
 }
