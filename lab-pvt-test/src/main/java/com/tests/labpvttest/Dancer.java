@@ -4,9 +4,13 @@ import java.util.ArrayList;
 
 public class Dancer {
 
-	ArrayList<Integer> sequence = new ArrayList<Integer>();
+	private Movements movements;
+	private ArrayList<Integer> sequence = new ArrayList<Integer>();
+	private int currentPosition = 0;
+	private int newPosition = 0;
 
 	public Dancer(ArrayList<Integer> sequence) {
+		movements = new Movements(sequence);
 		this.sequence = sequence;
 	}
 
@@ -17,11 +21,16 @@ public class Dancer {
 		return false;
 	}
 
-	public boolean dance() {
+	public int dance() {
 		if (isCanDance()) {
-			// TODO dance
+			while (newPosition != -1) {
+				currentPosition = newPosition;
+				newPosition = movements.move(sequence.get(currentPosition));
+			}
+			return movements.getCountOfSteps() + currentPosition;
 		}
-		return false;
+
+		return 0;
 
 	}
 }
