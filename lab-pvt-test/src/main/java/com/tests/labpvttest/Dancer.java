@@ -23,14 +23,14 @@ public class Dancer {
 
 	public int dance() {
 		if (isCanDance()) {
-			while (newPosition != -1) {
+			while (newPosition != -1 && movements.getNumberOfMovements() != sequence.size()) {
 				currentPosition = newPosition;
 				newPosition = movements.move(sequence.get(currentPosition));
 			}
-			return movements.getCountOfSteps() + currentPosition;
 		}
-
-		return 0;
+		if (movements.getNumberOfMovements() == sequence.size())
+			return -1;
+		return movements.getCountOfSteps() + currentPosition;
 
 	}
 }

@@ -6,19 +6,22 @@ public class Movements {
 
 	private ArrayList<Integer> sequence = new ArrayList<Integer>();
 	private int position = 0;
-	int countOfSteps = 0;
+	private int countOfSteps = 0;
+	private int numberOfMovements = 0;
 
 	public Movements(ArrayList<Integer> sequence) {
 		this.sequence = sequence;
 	}
 
 	public int move(int steps) {
+
 		if (steps % 2 == 0) {
 			position += steps;
 		} else {
 			position -= steps;
 		}
 		if (checkPosition()) {
+			numberOfMovements++;
 			countOfSteps += steps;
 			return position;
 		}
@@ -35,5 +38,9 @@ public class Movements {
 
 	public int getCountOfSteps() {
 		return countOfSteps;
+	}
+
+	public int getNumberOfMovements() {
+		return numberOfMovements;
 	}
 }
